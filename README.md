@@ -7,8 +7,7 @@ My goal was to make a simple version of the view with React. React was also mand
  
 # Setup
  
-Easiest to install with Node and React. Run the command "npm start" when you have the correct folder selected
-( /wolt-frontend ). The live server will open to ( http://localhost:3000/ ), where you can review the result.
+Easiest to install with Node and React. Run the command "npm start". The live server will open to ( http://localhost:3000/ ), where you can review the result.
 
 # Overview
 
