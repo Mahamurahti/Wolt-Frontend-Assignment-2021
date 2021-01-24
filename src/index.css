@@ -1,13 +1,101 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+::-webkit-scrollbar{
+    display: none;
 }
+*{
+    font-family: 'Ubuntu', Arial, sans-serif;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("./tile_background.png");
+    background-repeat: repeat;
+}
+.navBar{
+    height: 100px;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #121212;
+    color: #70F1FF;
+}
+.section{
+    max-width: 1200px;
+    height: 350px;
+
+    margin: 20px auto;
+}
+.section .headAndBtns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section h2 {
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.section button{
+    width: 40px;
+    height: 40px;
+
+    margin: 0 20px;
+
+    border-radius: 50%;
+    border: none;
+    outline: none;
+
+    font-size: 24px;
+}
+.disable{
+    background-color: rgba(130,130,130,0.2);
+}
+.enable{
+    background-color: #f2f2f2;
+}
+.enable:hover{
+    color: #f2f2f2;
+    background-color: #121212;
+}
+.sectionContainer {
+    height: 280px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto;
+
+    overflow-x: scroll;
+}
+@media (max-width: 650px) {
+    .sectionContainer {
+        width: 420px;
+    }
+}
+.restaurant{
+    margin: 0 10px;
+    text-align: center;
+}
+.restaurant h3{
+    height: 40px;
+}
+.blurhash{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.blurhash figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    font-size: 24px;
+
+    transform: translateX(-50%);
 }

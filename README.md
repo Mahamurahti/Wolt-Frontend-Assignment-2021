@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Wolt-Frontend-Assignment-2021
+Assignment brief for junior developers 2021. Frontend version.
+ 
+# My implementation
+ 
+My goal was to make a simple version of the view with React. React was also mandatory.
+ 
+# Setup
+ 
+Easiest to install with Node and React. Run the command "npm start" when you have the correct folder selected
+( /wolt-frontend ). The live server will open to ( http://localhost:3000/ ), where you can review the result.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Overview
 
-## Available Scripts
+In 2017 we added a new view to the Wolt App, known as Discovery. The view mixes curated and automatically generated 
+content, like banners, articles, videos and lists (e.g. “Popular restaurants”, “New restaurants”). Discovery 
+is customized for each user based on their location, personal preferences and order history.
 
-In the project directory, you can run:
+In this assignment you get to follow in the footsteps of Wolt developers and create a Discovery page, although 
+a much simplified version (we don’t want you to spend hundreds of hours on this task 😀).
 
-### `npm start`
+In the backend version you will generate new / popular / nearby restaurant lists from the given data by taking the 
+location of a customer into account. The frontend task is about rendering such content as horizontal carousels. You 
+will also get to use one of our popular open source libraries, Blurhash in the frontend version.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It should take about 4-8 hours to complete this assignment. However, the best way to make your assignment really stand 
+out is to finish it with care - the last 10% is often the most important part of any software project.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Frontend Assignment
 
-### `npm test`
+discovery_page.json in the repository has the following structure.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+{
+   "sections": [
+      {
+           "title": "Popular Restaurants",
+           "restaurants": [...10 restaurant objects...]
+      },
+      {
+           "title": "New Restaurants",
+           "restaurants": [...10 restaurant objects...]
+      },
+ 	{
+           "title": "Nearby Restaurants",
+           "restaurants": [...10 restaurant objects...]
+      }
 
-### `npm run build`
+   ]
+}
+```
+Your task is to render this page on the screen.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+There are four rules for rendering the page:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Each section (title + restaurants-list fields) must be shown as a horizontal carousel (with the title visible). 
+The user needs to be able to scroll the carousel to both directions.
+- Each carousel can have max. 5 elements visible on screen (at the same time).
+- Each restaurant object is rendered with a title, blurhash and online fields.
+- Carousels scroll infinitely, so when the user reaches the last element, it starts from the beginning (or vice versa).
+Otherwise you can freely decide everything, from the layout to image sizes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Instead of real images we are using a technology known as BlurHash. This algorithm for representing images with a 
+few dozen chars was created by Wolt's iOS engineer Dag Ågren in 2017. You can use react-blurhash or Blurhash 
+TypeScript library when rendering these values (..if you want to save some development time 😉). Blurhash values in 
+the discovery_page.json were generated from 480x270 (16:9) images.
